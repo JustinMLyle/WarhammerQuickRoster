@@ -5,3 +5,10 @@ C:\Users\Ennkay\Documents\Web\Visual-Studio-Integration\QuickWarhammerRoster\Qui
 C:\Users\Ennkay\Documents\Web\Visual-Studio-Integration\QuickWarhammerRoster\QuickWarhammerRoster\obj\Debug\QuickWarhammerRoster.csproj.CoreCompileInputs.cache
 C:\Users\Ennkay\Documents\Web\Visual-Studio-Integration\QuickWarhammerRoster\QuickWarhammerRoster\obj\Debug\QuickWarhammerRoster.exe
 C:\Users\Ennkay\Documents\Web\Visual-Studio-Integration\QuickWarhammerRoster\QuickWarhammerRoster\obj\Debug\QuickWarhammerRoster.pdb
+C:\Users\Ennkay\Documents\Web\WarhammerQuickRoster\QuickWarhammerRoster\QuickWarhammerRoster\obj\Debug\QuickWarhammerRoster.csprojResolveAssemblyReference.cache
+C:\Users\Ennkay\Documents\Web\WarhammerQuickRoster\QuickWarhammerRoster\QuickWarhammerRoster\obj\Debug\QuickWarhammerRoster.csproj.CoreCompileInputs.cache
+C:\Users\Ennkay\Documents\Web\WarhammerQuickRoster\QuickWarhammerRoster\QuickWarhammerRoster\obj\Debug\QuickWarhammerRoster.exe
+C:\Users\Ennkay\Documents\Web\WarhammerQuickRoster\QuickWarhammerRoster\QuickWarhammerRoster\obj\Debug\QuickWarhammerRoster.pdb
+C:\Users\Ennkay\Documents\Web\WarhammerQuickRoster\QuickWarhammerRoster\QuickWarhammerRoster\bin\Debug\QuickWarhammerRoster.exe.config
+C:\Users\Ennkay\Documents\Web\WarhammerQuickRoster\QuickWarhammerRoster\QuickWarhammerRoster\bin\Debug\QuickWarhammerRoster.exe
+C:\Users\Ennkay\Documents\Web\WarhammerQuickRoster\QuickWarhammerRoster\QuickWarhammerRoster\bin\Debug\QuickWarhammerRoster.pdb

@@ -8,8 +8,18 @@ namespace QuickWarhammerRoster
 {
     class Roster
     {
+        private static int rosterCounter;
         private static List<Unit> UnitList = new List<Unit>();
         public static List<Unit> RosterList = new List<Unit>();
+
+
+        //Counters control looping sequence within the method
+        private static string continuetroopSelected;
+        private static int hqCounter;
+        private static int troopCounter;
+        //int fastCounter = 0; not implemented yet
+        //int heavyCounter = 0; to be implemented once I own Heavy Support Models
+
 
         public static void addUnits()
         {
@@ -54,7 +64,7 @@ namespace QuickWarhammerRoster
             {
                 UnitList.Add(new Unit("Lieutenent", "hq", 5));
                 Console.WriteLine("Lieutenent Selected");
-            }          
+            }
             if (hqselected == "mephiston")
             {
                 RosterList.Add(new Unit("Mephiston", "hq", 8));
@@ -71,12 +81,12 @@ namespace QuickWarhammerRoster
                 RosterList.Add(new Unit("Librarian Dreadnought", "hq", 9));
                 Console.WriteLine("Librarian Dreadnought Selected");
             }
-            
+
         }
 
         public static void troopSelector()
         {
-            
+
             foreach (var Unit in UnitList.FindAll(x => x.unitType == "troop"))
             {
                 Console.WriteLine(Unit.unitName + ", Troop, " + Unit.unitCost + " Power Level");
@@ -87,8 +97,8 @@ namespace QuickWarhammerRoster
 
             if (troopSelected == "scouts")
             {
-               RosterList.Add(new Unit("Scouts", "troop", 4));
-               Console.WriteLine("Scouts Selected");
+                RosterList.Add(new Unit("Scouts", "troop", 4));
+                Console.WriteLine("Scouts Selected");
             }
 
             if (troopSelected == "tactical squad")
@@ -128,26 +138,20 @@ namespace QuickWarhammerRoster
 
         public static void rosterBuilder()
         {
-            //Counters control looping sequence within the method
-            int rosterCounter = 0;
-            int hqCounter = 0;
-            int troopCounter = 0;
-            //int fastCounter = 0; not implemented yet
-            //int heavyCounter = 0; to be implemented once I own Heavy Support Models
-            
 
-            if (ForceOrg.forceType == "patrol")
+
+            if (ForceOrg.forceType == "patrol" && rosterCounter == 0)
             {
                 //start of loop at 0
                 while (rosterCounter == 0)
                 {
-                    
+
                     if (hqCounter == 0)//pick an hq choice
                     {
                         hqCounter++;
                         Console.WriteLine("Select 1 to 2 HQ choices from the Following List");
                         hqSelector();
-                        
+
                     }
                     Console.WriteLine("Select Another? Y/N");
                     string continueHQSelected = Console.ReadLine();//collect user input
@@ -169,39 +173,56 @@ namespace QuickWarhammerRoster
                 rosterQuery();//print the current roster
 
                 while (rosterCounter == 1)
-                {                                        
-                    Console.WriteLine("select 1 to 3 choices from the following list");
-                    troopSelector();
-                    troopCounter++;
-
-                    string continuetroopSelected = Console.ReadLine();
-                    continuetroopSelected.ToLower();                 
-                
-
-                if ((continuetroopSelected == "y" & (troopCounter < 3)))
+                {
+                    if (troopCounter == 0)
                     {
-                        rosterQuery();
-                        Console.WriteLine("select 1 to 2 choices from the following list");
+                        Console.WriteLine("select 1 to 3 choices from the following list");
                         troopSelector();
-                        troopCounter++;                        
+                        troopCounter++;
                         Console.WriteLine("Select Another? Y/N");
-                        continuetroopSelected = Console.ReadLine();
+                        string continuetroopSelected = Console.ReadLine();
+                        continuetroopSelected.ToLower();
+                        if (continuetroopSelected == "y")
+                        {
+                            rosterQuery();
+                            Console.WriteLine("select 1 to 2 choices from the following list");
+                            troopSelector();
+                            troopCounter++;
+                            Console.WriteLine("Select Another? Y/N");
+                            continuetroopSelected = Console.ReadLine();
+                            if (continuetroopSelected == "y")
+                            {
+                                rosterQuery();
+                                Console.WriteLine("select a choice from the following list");
+                                troopSelector();
+                                troopCounter++;
+
+                            }
+                            else
+                            {
+                                rosterCounter = 2;
+                            }
+
+                        }
+                        else
+                        {
+                            rosterCounter = 2;
+                        }
+
                     }
                     else
                     {
                         rosterCounter = 2;
                     }
-               
-
                 }
+
+
             }
 
 
         }
 
-
     }
-    
 }
 
     
