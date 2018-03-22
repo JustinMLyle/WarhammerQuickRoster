@@ -12,7 +12,7 @@ namespace QuickWarhammerRoster
         private static List<Unit> UnitList = new List<Unit>();
         public static List<Unit> RosterList = new List<Unit>();
 
-
+        private static int rosterPoints;
         //Counters control looping sequence within the method
         private static string continuetroopSelected;
         private static int hqCounter;
@@ -39,12 +39,19 @@ namespace QuickWarhammerRoster
         }
         public static void rosterQuery() //prints the force
         {
+            foreach (var Unit in RosterList)
+            {
+                rosterPoints = Unit.unitCost + rosterPoints;
+            }
+            
+
             Console.WriteLine("Your Force so far: ");
             foreach (var Unit in RosterList)
             {
                 Console.WriteLine(Unit.unitName + ", " + Unit.unitType + ", " + Unit.unitCost + " Power Level");
-            }
+            }            
             Console.WriteLine();//write a blank line
+            Console.WriteLine("Total Power Level: " + rosterPoints);
         }
         public static void hqSelector()//called during rosterbuilder to pick HQs and display them
         {
@@ -200,19 +207,19 @@ namespace QuickWarhammerRoster
                             }
                             else
                             {
-                                rosterCounter = 2;
+                                rosterCounter = 2; //move the roster builder along
                             }
 
                         }
                         else
                         {
-                            rosterCounter = 2;
+                            rosterCounter = 2;  //move the roster builder along
                         }
 
                     }
                     else
                     {
-                        rosterCounter = 2;
+                        rosterCounter = 2;  //move the roster builder along
                     }
                 }
 
